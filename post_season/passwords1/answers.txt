@@ -1,0 +1,21 @@
+test:Darnassus
+system:Exodar
+admin:Vol'jin
+mike:Stormwind City
+mark:Thunder Bluff
+matt:Booty Bay
+john:Area 52
+jim:Ironforge
+james:Orgrimmar
+jake:Undercity
+joe:Ratchet
+sam:Bogpaddle
+smith:Dalaran
+phil:Everlook
+pat:Thrall
+tom:H.A.R.V.E.Y.
+tony:Gadgetzan
+bill:Auctioneer Beardo
+bob:D.E.N.T.
+ben:Magni Bronzebeard
+root:NCL-1337-HAHA
