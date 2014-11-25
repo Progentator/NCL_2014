@@ -1,1 +1,1 @@
-These are informal write ups and the source code i used for the NCL 2014 Games.  The code is pretty bad as I was rushing threw the flags as fast as possible.  So please go by the logic it aint bad if it worked.
+These are informal write ups and the source code i used for the NCL 2014 Games.  The code is pretty bad as I was rushing through the flags as fast as possible.  So please go by the logic it aint bad if it worked.
