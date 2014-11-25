@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1265.21">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Monaco; color: #f5f5f5; background-color: #000000}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; min-height: 14.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Monaco; color: #afad24; background-color: #000000}
+    li.li4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #ffffff; background-color: #000000}
+    span.s1 {color: #afad24}
+    span.s2 {color: #cbcbcb}
+    span.s3 {color: #d53bd3}
+    span.s4 {color: #f5f5f5}
+    span.s5 {text-decoration: underline ; color: #0000ee}
+    ul.ul1 {list-style-type: square}
+  </style>
+</head>
+<body>
+<p class="p1">Hello Hacker,</p>
+<p class="p2"><br></p>
+<p class="p1">I'm glad we could come to an arrangement - sorry for such secrecy, but you can never be too careful, especially for such a sensitive task.</p>
+<p class="p2"><br></p>
+<p class="p1">As we discussed, I need you to help me crack into a web application, you don't need to worry about who or why - just focus on the task at hand!<span class="Apple-converted-space">  </span>There really is only one rule, ask too many questions and you'll never hear from me again.</p>
+<p class="p2"><br></p>
+<p class="p1">As previously agreed upon, once you successfully complete this assignment I'll send your payment to the Bitcoin address you provided.<span class="Apple-converted-space">  </span>Who knows, if this goes well, maybe you'll find more work in the future!</p>
+<p class="p2"><br></p>
+<p class="p1">Here's he deal, I have obtained a list of Usernames and Password hashes, and I need you to get me the plaintext passwords.<span class="Apple-converted-space">  </span>Unlucky for you, the passwords are for a custom web application, that seems to be using a custom Hashing algorithm - good thing you're the best, eh?<span class="Apple-converted-space">  </span>Lucky for both of us, I was able to get us both the hashing function code and three plaintext passwords.<span class="Apple-converted-space">  </span>Let's just say Bitcoin and Blackmail are rather persuasive!</p>
+<p class="p2"><br></p>
+<p class="p1">The Hashing Code:</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s1">function</span> jHash($string) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$hash = false;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$hash1 = 0;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$base = base64_encode($string);</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$characters = characterSplit($string);</p>
+<p class="p3"><span class="Apple-converted-space">        </span><span class="s1">foreach</span> ($characters as $character) {</p>
+<p class="p3"><span class="Apple-converted-space">                </span>$hash1 += <span class="s2">ord(</span>$character);</p>
+<p class="p3"><span class="Apple-converted-space">        </span>};</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$hash = $hash1 * <span class="s2">strlen(</span>$string);</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$hash2 = 0;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$characters = characterSplit($base);</p>
+<p class="p3"><span class="Apple-converted-space">        </span><span class="s1">foreach</span> ($characters as $character) {</p>
+<p class="p3"><span class="Apple-converted-space">                </span>$hash2 += <span class="s2">ord(</span>$character);</p>
+<p class="p3"><span class="Apple-converted-space">        </span>};</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$hash2 = $hash2 * <span class="s2">strlen(</span>$base);</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$hash3 = $hash1 | $hash2;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$hash4 = $string ^ $base;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$characters = characterSplit($hash4);</p>
+<p class="p3"><span class="Apple-converted-space">        </span><span class="s1">foreach</span> ($characters as $character) {</p>
+<p class="p3"><span class="Apple-converted-space">                </span>$hash4 += <span class="s2">ord(</span>$character);</p>
+<p class="p3"><span class="Apple-converted-space">        </span>};</p>
+<p class="p3"><span class="Apple-converted-space">        </span>$hash = $hash1 + $hash2 + $hash3 * $hash4;</p>
+<p class="p3"><span class="Apple-converted-space">        </span><span class="s3">return</span> base64_encode($hash);</p>
+<p class="p3">};</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">The person I was...uh...'working with' wasn't able to get access to the <i>characterSplit</i> function, but assures me it just splits the strings into an array of characters.</p>
+<p class="p2"><br></p>
+<p class="p1">The Passwords:</p>
+<p class="p2"><br></p>
+<ul class="ul1">
+  <li class="li4">Darnassus</li>
+  <li class="li4">Ratchet</li>
+  <li class="li4">Area 52</li>
+</ul>
+<p class="p5"><br></p>
+<p class="p1">My source didn't know which user accounts those passwords belonged to, but it's a good start.</p>
+<p class="p2"><br></p>
+<p class="p1">Database Dump:</p>
+<p class="p2"><br></p>
+<p class="p6">"test"<span class="s4">=&gt;</span>"MzM1MTY0OA=="<span class="s4">, <span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"system"<span class="s4">=&gt;</span>"MTE1NjA2Nw=="<span class="s4">,</span></p>
+<p class="p6">"admin"<span class="s4">=&gt;</span>"NDIyMDI2MQ=="<span class="s4">,<span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"mike"<span class="s4">=&gt;</span>"MjQ5NDk2ODA="<span class="s4">, <span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"mark"<span class="s4">=&gt;</span>"MTQ4NTg5NzQ="<span class="s4">, <span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"matt"<span class="s4">=&gt;</span>"NDM5MDkwNg=="<span class="s4">, <span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"john"<span class="s4">=&gt;</span>"NTM4MzQ2MA=="<span class="s4">, <span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"jim"<span class="s4">=&gt;</span>"Mjg1MjgwNQ=="<span class="s4">,<span class="Apple-converted-space">   </span></span></p>
+<p class="p6">"james"<span class="s4">=&gt;</span>"MzA2NTQ4MA=="<span class="s4">,<span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"jake"<span class="s4">=&gt;</span>"NDIyNDc4MA=="<span class="s4">, <span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"joe"<span class="s4">=&gt;</span>"Mzc5NzQ3OQ=="<span class="s4">,<span class="Apple-converted-space">   </span></span></p>
+<p class="p6">"sam"<span class="s4">=&gt;</span>"MzgwMjM3MA=="<span class="s4">,<span class="Apple-converted-space">   </span></span></p>
+<p class="p6">"smith"<span class="s4">=&gt;</span>"MzEzODg5OQ=="<span class="s4">,<span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"phil"<span class="s4">=&gt;</span>"MzI4ODkyMA=="<span class="s4">, <span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"pat"<span class="s4">=&gt;</span>"MTQ2MTgwNA=="<span class="s4">,<span class="Apple-converted-space">   </span></span></p>
+<p class="p6">"tom"<span class="s4">=&gt;</span>"MTk4MzU3Nzk="<span class="s4">,<span class="Apple-converted-space">   </span></span></p>
+<p class="p6">"tony"<span class="s4">=&gt;</span>"NTE1Njc0MA=="<span class="s4">, <span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"bill"<span class="s4">=&gt;</span>"MzA0NjgxODA="<span class="s4">, <span class="Apple-converted-space"> </span></span></p>
+<p class="p6">"bob"<span class="s4">=&gt;</span>"NjUxMzA5OA=="<span class="s4">,<span class="Apple-converted-space">   </span></span></p>
+<p class="p6">"ben"<span class="s4">=&gt;</span>"MjkyMzQzNjY="<span class="s4">,<span class="Apple-converted-space">   </span></span></p>
+<p class="p6">"root"<span class="s4">=&gt;</span>"MjkyNjM5ODY="<span class="s4"><span class="Apple-converted-space">   </span></span></p>
+<p class="p2"><br></p>
+<p class="p1">One last thing, my 'friend' was able to get external access to one of their "authentication testing" servers.<span class="Apple-converted-space">  </span>So you should be able to use this to test your progress.<span class="Apple-converted-space">  </span>Not sure how helpful it will be, but it's another option.<span class="Apple-converted-space">  </span>Test Server:<span class="Apple-converted-space">  </span><a href="https://54.83.50.177/"><span class="s5">https://54.83.50.177/</span></a></p>
+<p class="p2"><br></p>
+<p class="p1">Good Luck,</p>
+<p class="p1">Warlock</p>
+</body>
+</html>
+
