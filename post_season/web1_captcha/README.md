@@ -1,4 +1,4 @@
-Warning: I do not believe this will work on Windows due to how the dictionary was built (Windows paths are not case sensitive).
+<b>Warning:</b> I do not believe this will work on Windows due to how the dictionary was built (Windows paths are not case sensitive).
 
 This challenge was entering the correct Captcha code 10,000 times in a row consecutively!  If you failed a single captcha it would reset the score to 0.  Thankfully the captcha has a few flaws which made it easy to break:
 <ul>
