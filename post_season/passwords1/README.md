@@ -12,7 +12,7 @@ The workflow would be:
 
 <ul>
 	<li>python pages.py http://www.wowwiki.com/Undercity > urls</li>
-	<li>python pages.py urls > words</li>
+	<li>python extract.py urls > words</li>
 	<li>bash clean.py words > dict</li>
 	<li>php bf.php dict</li>
 </ul>
