@@ -1,0 +1,5 @@
+Cracking WPA is a bit harder than WEP as it isn't vulnerable to what I previously discussed.  To do it, I used Hashcat with the rockyou.txt dictionary file and Best64 ruleset.  But before we can even use hashcat we must extract the 4-way handshake.  Run the wireless packet through `wpaclean <out> <in>`, which will extract the 4-Way handshake and BSSID.  Then you must convert it into an hccap, which is a format designed for hashcat (`aircrack-ng -J <in> -J <out>`).  Notice the arguments are switched between the two commands and the J is capital.
+
+Once you have the HCCAP file, you can let your computer do all the work.  The first command I believe I ran was `cudaHashcat -m 2500 capture.hccap rockyou.txt -r rules/best64.rule` -- I may have used a different dictionary but do not believe so turkeydinner was the password.  The second capture was in NCL Flag format (NCL-NOPE-9999) and I had cracked it with `cudaHashcat -a 6 -m 2500 capture.hccap NCL-?u?u?u?u-?d?d?d?d`.
+
+The wireless passwords were retrieved the same way as WEP, just find an HTTP Get and examine the authorization portion of the packet.
