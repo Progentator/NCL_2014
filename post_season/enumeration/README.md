@@ -1,0 +1,3 @@
+Target: 23.23.185.122
+
+For this challenge it looked like the target may be listening on another port because all you are given is an apache saying the directory is empty.  After nmap doesn't discover any other services running it had to be something with the empty index.  The key was checking the robots.txt directory which tells web crawlers do not crawl /flags, I had got lucky and guessed that but my next step was to use DIR Buster which should of found it as well.  Inside the directory were 5 flags, flag 6 was hidden from the directory list because its name was .flag_06.php; which is a hidden file in linux.  I can't remember exactly how I found it, it was either luck or seeing something similiar within Exploit 3, Web 4, or a previous write up.
